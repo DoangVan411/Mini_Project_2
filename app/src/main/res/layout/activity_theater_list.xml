@@ -5,35 +5,39 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnGoLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/tvWelcome"
+        android:id="@+id/tvTheaterTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/main_now_showing"
+        android:text="@string/theater_list_header"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/btnGoLogin"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMovies"
+        android:id="@+id/rvTheaters"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnGoLogin" />
+        app:layout_constraintTop_toBottomOf="@id/tvTheaterTitle" />
+
+    <TextView
+        android:id="@+id/tvEmptyTheaters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theater_list_no_data"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rvTheaters"
+        app:layout_constraintEnd_toEndOf="@id/rvTheaters"
+        app:layout_constraintStart_toStartOf="@id/rvTheaters"
+        app:layout_constraintTop_toTopOf="@id/rvTheaters" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

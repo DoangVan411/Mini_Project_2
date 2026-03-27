@@ -23,6 +23,9 @@
         <activity
             android:name=".view.LoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".view.TheaterListActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

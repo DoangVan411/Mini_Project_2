@@ -16,6 +16,15 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
     private final List<MovieEntity> movies = new ArrayList<>();
+    private final OnMovieClickListener onMovieClickListener;
+
+    public interface OnMovieClickListener {
+        void onMovieClick(MovieEntity movie);
+    }
+
+    public MovieAdapter(OnMovieClickListener onMovieClickListener) {
+        this.onMovieClickListener = onMovieClickListener;
+    }
 
     public void setMovies(List<MovieEntity> movieList) {
         movies.clear();
@@ -38,6 +47,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.tvTitle.setText(movie.title);
         holder.tvMeta.setText(movie.genre + " - " + movie.durationMinutes + " min - " + movie.ageRating);
         holder.tvDescription.setText(movie.description);
+        holder.itemView.setOnClickListener(v -> onMovieClickListener.onMovieClick(movie));
     }
 
     @Override

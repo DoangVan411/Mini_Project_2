@@ -9,7 +9,7 @@
         android:id="@+id/btnGoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/main_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -18,7 +18,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Danh sach phim dang chieu"
+        android:text="@string/main_now_showing"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"

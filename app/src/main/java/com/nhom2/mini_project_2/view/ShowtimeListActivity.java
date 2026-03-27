@@ -1,5 +1,6 @@
 package com.nhom2.mini_project_2.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom2.mini_project_2.R;
+import com.nhom2.mini_project_2.controller.AuthController;
 import com.nhom2.mini_project_2.model.database.AppDatabase;
 import com.nhom2.mini_project_2.model.entity.MovieEntity;
 import com.nhom2.mini_project_2.model.entity.ShowtimeEntity;
@@ -26,11 +28,13 @@ public class ShowtimeListActivity extends AppCompatActivity {
     public static final String EXTRA_THEATER_NAME = "extra_theater_name";
 
     private int durationMinutes = 0;
+    private AuthController authController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showtime_list);
+        authController = new AuthController(this);
 
         long movieId = getIntent().getLongExtra(EXTRA_MOVIE_ID, -1);
         String movieTitle = getIntent().getStringExtra(EXTRA_MOVIE_TITLE);
@@ -76,6 +80,18 @@ public class ShowtimeListActivity extends AppCompatActivity {
     }
 
     private void onShowtimeSelected(ShowtimeEntity showtime) {
+        if (authController.isLoggedIn()) {
+            Intent intent = new Intent(this, BookTicketActivity.class);
+            intent.putExtra(BookTicketActivity.EXTRA_SHOWTIME_ID, showtime.id);
+            startActivity(intent);
+            return;
+        }
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra(LoginActivity.EXTRA_REDIRECT_BOOKING, true);
+        intent.putExtra(LoginActivity.EXTRA_SHOWTIME_ID, showtime.id);
+        startActivity(intent);
+
         long startMs = showtime.startTimeEpochMs;
         long endMs = startMs;
         if (durationMinutes > 0) {

@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colors cho màn hình chọn lịch chiếu -->
+    <color name="screen_bg">#FFF5F7FB</color>
+    <color name="title_text">#FF1A2A4A</color>
+    <color name="body_text">#FF2A2A2A</color>
+
+    <color name="card_stroke">#FFD6DDEA</color>
+
+    <color name="slot_default_bg">#FFE7ECF6</color>
+    <color name="slot_default_text">#FF1A2A4A</color>
+    <color name="slot_selected_bg">#FF325AA8</color>
+    <color name="slot_selected_text">#FFFFFFFF</color>
 </resources>

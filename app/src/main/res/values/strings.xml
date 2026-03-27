@@ -1,7 +1,56 @@
 <resources>
     <string name="app_name">Mini_Project_2</string>
 
-    <!-- Màn hình chọn lịch chiếu (đang còn giữ trong project) -->
+    <string name="main_login">Đăng nhập</string>
+    <string name="main_now_showing">Danh sách phim đang chiếu</string>
+
+    <string name="login_title">Đăng nhập</string>
+    <string name="login_username_hint">Tài khoản</string>
+    <string name="login_password_hint">Mật khẩu</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="login_missing_input">Vui lòng nhập đầy đủ tài khoản và mật khẩu</string>
+    <string name="login_invalid_credentials">Sai tài khoản hoặc mật khẩu</string>
+    <string name="login_success">Đăng nhập thành công: %1$s</string>
+
+    <string name="theater_list_title">Rạp đang chiếu: %1$s</string>
+    <string name="theater_list_fallback_movie">phim đã chọn</string>
+    <string name="theater_list_empty">Phim này hiện chưa có rạp chiếu</string>
+    <string name="theater_list_header">Rạp đang chiếu</string>
+    <string name="theater_list_no_data">Không có dữ liệu</string>
+
+    <string name="book_ticket_title">Đặt vé</string>
+    <string name="book_ticket_showtime_default">Suất chiếu</string>
+    <string name="book_ticket_pick_seat">Chọn ghế</string>
+    <string name="book_ticket_selected_seat">Ghế đang chọn: %1$s</string>
+    <string name="book_ticket_selected_seat_none">Ghế đang chọn: Chưa chọn</string>
+    <string name="book_ticket_confirm">Xác nhận đặt vé</string>
+    <string name="book_ticket_view_my_tickets">Xem vé của tôi</string>
+    <string name="book_ticket_booked_section">Vé đã đặt</string>
+    <string name="book_ticket_no_tickets">Bạn chưa có vé nào</string>
+    <string name="book_ticket_showtime_not_found">Suất chiếu không tồn tại. id=%1$d</string>
+    <string name="book_ticket_showtime_info">Suất chiếu ID: %1$d\nBắt đầu: %2$s\nGiá: %3$d VND</string>
+    <string name="book_ticket_choose_seat_required">Vui lòng chọn ghế</string>
+    <string name="book_ticket_success">Đặt vé thành công</string>
+    <string name="book_ticket_need_login">Bạn cần đăng nhập</string>
+    <string name="book_ticket_showtime_missing">Suất chiếu không tồn tại</string>
+    <string name="book_ticket_seat_already_booked">Ghế đã được đặt</string>
+    <string name="book_ticket_failed">Không thể đặt vé</string>
+
+    <string name="my_tickets_title">Vé đã đặt</string>
+    <string name="my_tickets_back_home">Về trang chủ</string>
+    <string name="my_tickets_empty">Bạn chưa đặt vé nào.</string>
+    <string name="my_tickets_showtime_id">Suất chiếu ID %1$d</string>
+    <string name="my_tickets_showtime_time">Suất chiếu ID %1$d - %2$s</string>
+    <string name="my_tickets_ticket_header">Vé #%1$d</string>
+    <string name="my_tickets_seat">Ghế: %1$s</string>
+    <string name="my_tickets_booked_time">Đặt lúc: %1$s</string>
+
+    <string name="ticket_item_header">Vé #%1$d</string>
+    <string name="ticket_item_seat">Ghế: %1$s</string>
+    <string name="ticket_item_booked_time">Đặt lúc: %1$s</string>
+    <string name="ticket_item_showtime_id">Suất chiếu ID: %1$d</string>
+    <string name="ticket_item_showtime_time">Suất chiếu %1$d - %2$s - %3$d VND</string>
+
     <string name="main_title">Mini Project 2</string>
     <string name="button_choose_showtime">Chọn lịch chiếu phim</string>
     <string name="showtime_title">Chọn lịch chiếu phim</string>
@@ -14,7 +63,6 @@
     <string name="showtime_selected_template">Bạn đã chọn:\n%1$s\n%2$s\n%3$s - %4$s</string>
     <string name="showtime_saved">Đã lưu lịch chiếu</string>
 
-    <!-- Màn hình lịch chiếu (movie -> rạp -> danh sách suất) -->
     <string name="schedule_title">Lịch chiếu: %1$s - %2$s</string>
     <string name="empty_showtimes">Chưa có suất chiếu.</string>
     <string name="showtime_time_range_template">%1$s - %2$s</string>

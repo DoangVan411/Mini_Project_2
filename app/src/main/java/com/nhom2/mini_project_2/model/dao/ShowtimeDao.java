@@ -9,6 +9,8 @@ import java.util.List;
 
 @Dao
 public interface ShowtimeDao {
+    @Query("SELECT * FROM showtimes WHERE id = :showtimeId LIMIT 1")
+    ShowtimeEntity findById(long showtimeId);
 
     @Query("SELECT * FROM showtimes WHERE movieId = :movieId AND theaterId = :theaterId ORDER BY startTimeEpochMs ASC")
     List<ShowtimeEntity> getShowtimesByMovieAndTheater(long movieId, long theaterId);

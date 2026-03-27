@@ -34,14 +34,13 @@ public class TheaterListActivity extends AppCompatActivity {
         TextView tvEmpty = findViewById(R.id.tvEmptyTheaters);
 
         if (movieTitle == null || movieTitle.trim().isEmpty()) {
-            movieTitle = "phim da chon";
+            movieTitle = getString(R.string.theater_list_fallback_movie);
         }
 
-        // Java lambda yêu cầu biến capture phải là "effectively final"
         final long finalMovieId = movieId;
         final String finalMovieTitle = movieTitle;
 
-        tvTitle.setText("Rap dang chieu: " + movieTitle);
+        tvTitle.setText(getString(R.string.theater_list_title, movieTitle));
 
         TheaterAdapter theaterAdapter = new TheaterAdapter(
                 theater -> onTheaterSelected(finalMovieId, finalMovieTitle, theater)
@@ -53,7 +52,7 @@ public class TheaterListActivity extends AppCompatActivity {
         theaterAdapter.setTheaters(theaters);
 
         if (theaters == null || theaters.isEmpty()) {
-            tvEmpty.setText("Phim nay hien chua co rap chieu");
+            tvEmpty.setText(getString(R.string.theater_list_empty));
             tvEmpty.setVisibility(View.VISIBLE);
         } else {
             tvEmpty.setVisibility(View.GONE);

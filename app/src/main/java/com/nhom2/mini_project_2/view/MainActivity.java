@@ -1,6 +1,8 @@
 package com.nhom2.mini_project_2.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +19,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView tvWelcome = findViewById(R.id.tvWelcome);
-        AuthController authController = new AuthController(this);
-        UserEntity user = authController.currentUser();
-        if (user != null) {
-            tvWelcome.setText("Da dang nhap voi tai khoan: " + user.username);
-        } else {
-            tvWelcome.setText("Chua co thong tin dang nhap");
-        }
+        Button btnGoLogin = findViewById(R.id.btnGoLogin);
+
+        btnGoLogin.setOnClickListener(v ->
+                startActivity(new Intent(this, LoginActivity.class))
+        );
     }
 }

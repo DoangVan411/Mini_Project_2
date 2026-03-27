@@ -3,13 +3,14 @@ package com.nhom2.mini_project_2.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom2.mini_project_2.R;
-import com.nhom2.mini_project_2.controller.AuthController;
-import com.nhom2.mini_project_2.model.entity.UserEntity;
+import com.nhom2.mini_project_2.model.database.AppDatabase;
+import com.nhom2.mini_project_2.view.adapter.MovieAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,8 +19,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView tvWelcome = findViewById(R.id.tvWelcome);
         Button btnGoLogin = findViewById(R.id.btnGoLogin);
+        RecyclerView rvMovies = findViewById(R.id.rvMovies);
+        MovieAdapter movieAdapter = new MovieAdapter();
+
+        rvMovies.setLayoutManager(new LinearLayoutManager(this));
+        rvMovies.setAdapter(movieAdapter);
+
+        movieAdapter.setMovies(AppDatabase.getInstance(this).movieDao().getAllMovies());
 
         btnGoLogin.setOnClickListener(v ->
                 startActivity(new Intent(this, LoginActivity.class))

@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.nhom2.mini_project_2.model.dao.MovieDao;
 import com.nhom2.mini_project_2.model.dao.TheaterDao;
+import com.nhom2.mini_project_2.model.dao.ShowtimeDao;
 import com.nhom2.mini_project_2.model.dao.UserDao;
 import com.nhom2.mini_project_2.model.entity.MovieEntity;
 import com.nhom2.mini_project_2.model.entity.ShowtimeEntity;
@@ -33,6 +34,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
     public abstract MovieDao movieDao();
     public abstract TheaterDao theaterDao();
+    public abstract ShowtimeDao showtimeDao();
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

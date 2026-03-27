@@ -11,4 +11,7 @@ import java.util.List;
 public interface MovieDao {
     @Query("SELECT * FROM movies ORDER BY id ASC")
     List<MovieEntity> getAllMovies();
+
+    @Query("SELECT * FROM movies WHERE id = :id LIMIT 1")
+    MovieEntity getMovieById(long id);
 }

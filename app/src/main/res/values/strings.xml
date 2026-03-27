@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Mini_Project_2</string>
+
+    <!-- Màn hình chọn lịch chiếu (đang còn giữ trong project) -->
+    <string name="main_title">Mini Project 2</string>
+    <string name="button_choose_showtime">Chọn lịch chiếu phim</string>
+    <string name="showtime_title">Chọn lịch chiếu phim</string>
+    <string name="label_time">Suất chiếu</string>
+    <string name="showtime_not_selected">Chưa chọn lịch chiếu.</string>
+
+    <string name="showtime_movie_fixed">Phim: %1$s</string>
+    <string name="showtime_theater_fixed">Rạp: %1$s</string>
+    <string name="showtime_date_fixed">Ngày chiếu: %1$s</string>
+    <string name="showtime_selected_template">Bạn đã chọn:\n%1$s\n%2$s\n%3$s - %4$s</string>
+    <string name="showtime_saved">Đã lưu lịch chiếu</string>
+
+    <!-- Màn hình lịch chiếu (movie -> rạp -> danh sách suất) -->
+    <string name="schedule_title">Lịch chiếu: %1$s - %2$s</string>
+    <string name="empty_showtimes">Chưa có suất chiếu.</string>
+    <string name="showtime_time_range_template">%1$s - %2$s</string>
+    <string name="showtime_price_template">Giá: %1$d đ</string>
+    <string name="showtime_selected_toast">Bạn đã chọn suất: %1$s - %2$s</string>
 </resources>
